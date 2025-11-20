@@ -35,7 +35,6 @@ CONTENT_SELECTORS = [
     ".theme-doc-markdown"
 ]
 
-# --- CSS STYLES (Fixed Page Breaks) ---
 CSS_STYLES = """
     @page { 
         size: A4; margin: 1.5cm; margin-bottom: 2.5cm; 
@@ -56,24 +55,23 @@ CSS_STYLES = """
     h1 { border-bottom: 2px solid #2c3e50; padding-bottom: 5px; margin-top: 0; color: #2c3e50; page-break-after: avoid; }
     h2 { border-bottom: 1px solid #eee; margin-top: 2em; color: #e67e22; page-break-after: avoid; }
     
-    /* --- COVER PAGE FIX --- */
     .cover-page { 
         page: cover; 
         text-align: center; 
         padding-top: 35%; 
         height: 100%; 
-        page-break-after: always; /* Forces TOC to next page */
+        page-break-after: always;
     }
     .cover-title { font-size: 36pt; font-weight: bold; color: #2c3e50; border-bottom: 4px solid #2c3e50; display: inline-block; margin-bottom: 20px;}
     .cover-subtitle { font-size: 18pt; color: #7f8c8d; }
     .cover-footer { font-size: 10pt; color: #95a5a6; margin-top: 100px; }
 
-    /* --- TOC PAGE FIX --- */
     .toc-page { 
-        page-break-before: always; /* Double safety */
+        page-break-before: always; 
         page-break-after: always; 
         padding: 2em; 
     }
+    
     .toc-header { text-align: center; font-size: 24pt; margin-bottom: 2em; border-bottom: 2px solid #eee; }
     ul.toc-list { list-style-type: none; padding: 0; }
     li.toc-entry { margin-bottom: 0.5em; }
@@ -93,7 +91,6 @@ CSS_STYLES = """
     tr { page-break-inside: avoid; }
 """
 
-# --- HELPERS ---
 def generate_cover_html(title, subtitle):
     date_str = datetime.now().strftime("%B %d, %Y")
     return f"""
@@ -293,7 +290,6 @@ def create_pdf(html_content, filename, doc_title):
     except Exception as e:
         print(f"❌ PDF Error: {e}")
 
-# --- CLI MAIN ---
 def setup_arg_parser():
     parser = argparse.ArgumentParser(description="Universal Doc Downloader")
     parser.add_argument("url", help="The URL of the documentation homepage.")

